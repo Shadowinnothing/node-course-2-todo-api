@@ -23,7 +23,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   });
   */
 
-  //challange: find user Nikola Jokic and update name to Ryan Haig
+  //challange: find user name and increment age
   db.collection('Users').findOneAndUpdate({
     _id: new ObjectID('5ae37f432d745defda9776da')
   }, {
