@@ -17,7 +17,6 @@ app.post('/todos', (request, response) => {
 
   todo.save().then((doc) => {
     response.send(doc);
-    console.log(`Uploaded to Server: ${doc.text}`);
   }, (err) => {
     response.status(400).send(err);
   });
