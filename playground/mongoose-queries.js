@@ -7,7 +7,7 @@ const {User} = require('./../server/models/user.js');
 let id = '5ae66b0db03419761e1f5580';
 let userId = '5ae3b7fc7a2d60dc5279f48f';
 
-/*
+
 if(!ObjectID.isValid(id)){
   console.log('ID is not valid');
 }
@@ -32,7 +32,6 @@ Todo.findById(id).then((todo) => {
 }).catch((err) => {
   console.log(err);
 });
-*/
 
 //challange: querry user collection
 //load in user ID models
