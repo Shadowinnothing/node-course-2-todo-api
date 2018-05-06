@@ -13,6 +13,10 @@ Todo.remove({}).then((result) => {
 //Todo.findOneAndRemove({}).then((result) => {});
 //Todo.findByIdAndRemove
 
+Todo.findOneAndRemove({_id: '5aef628a0dda413776aff646'}).then((todo) => {
+  
+});
+
 Todo.findByIdAndRemove('5aef628a0dda413776aff646').then((todo) => {
   console.log(todo);
 });
