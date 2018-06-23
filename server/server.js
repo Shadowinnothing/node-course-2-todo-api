@@ -104,12 +104,13 @@ app.post('/users', (req, res) => {
   user.save().then(() => {
     return user.generateAuthToken();
   }).then((token) => {
-    //console.log('token: ', token);
     res.header('x-auth', token).send(user);
   }).catch((err) => {
     res.status(400).send(err);
   })
 });
+
+app.get('/users/me')
 
 app.listen(port, () => {
   console.log(`Started on port ${port}`);
