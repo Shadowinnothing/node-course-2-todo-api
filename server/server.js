@@ -8,6 +8,7 @@ let {mongoose} = require('./db/mongoose.js');
 let {ObjectID} = require('mongodb');
 let {Todo} = require('./models/todo.js');
 let {User} = require('./models/user.js');
+let {authenticate} = require('./middleware/authenticate');
 
 let app = express();
 let port = process.env.PORT;
@@ -110,7 +111,10 @@ app.post('/users', (req, res) => {
   })
 });
 
-app.get('/users/me')
+// First private route
+app.get('/users/me', authenticate, (req, res) => {
+  res.send(req.user);
+});
 
 app.listen(port, () => {
   console.log(`Started on port ${port}`);
